@@ -1,37 +1,67 @@
-<a href="https://www.llamatutor.com">
-  <img alt="Llama Tutor" src="./public/og-image.png">
-  <h1 align="center">Llama Tutor</h1>
-</a>
+# My Forked Project
 
-<p align="center">
-  An open source AI personal tutor. Powered by Llama 3 70B & Together.ai
-</p>
+This project is a fork of the [Original Project](https://github.com/Nutlope/llamatutor).
 
-## Tech stack
+## Changes in This Fork
 
-- Llama 3.1 70B from Meta for the LLM
-- Together AI for LLM inference
-- Next.js app router with Tailwind
-- Serper for the search API
-- Helicone for observability
-- Plausible for website analytics
+In this fork, I have introduced several enhancements to allow the customization of the server and model used by the application. The primary changes are as follows:
 
-## Cloning & running
+### Environment Variables
 
-1. Fork or clone the repo
-2. Create an account at [Together AI](https://dub.sh/together-ai) for the LLM
-3. Create an account at [SERP API](https://serper.dev/) or with Azure ([Bing Search API](https://www.microsoft.com/en-us/bing/apis/bing-web-search-api))
-4. Create an account at [Helicone](https://www.helicone.ai/) for observability
-5. Create a `.env` (use the `.example.env` for reference) and replace the API keys
-6. Run `npm install` and `npm run dev` to install dependencies and run locally
+Three new environment variables have been added to the `.env` file:
 
-## Future Tasks
+- `LLAMAEDGE_BASE_URL`: URL for the LlamaEdge server.
+- `LLAMAEDGE_MODEL_NAME`: Name of the LlamaEdge model to be used.
+- `LLAMAEDGE_API_KEY`: API key for accessing LlamaEdge services.
 
-- [ ] Add a share & copy buttons that folks can click on after convos are generated
-- [ ] Add potential follow up questions + new chat at the end of chat page
-- [ ] Split the page into two pages and add back the footer
-- [ ] Move all my icons into their own typescript file (transform.tools)
-- [ ] Add a more detailed landing page with a nice section with the GitHub link
-- [ ] Add nice hamburger menu on mobile
-- [ ] Try out the generative UI stuff from Vercel
-- [ ] Add a nicer dropdown overall
+These variables allow you to customize the URL and use your own server and model. The default values for these variables are:
+
+```plaintext
+LLAMAEDGE_BASE_URL=https://llama.us.gaianet.network/v1
+LLAMAEDGE_MODEL_NAME=llama
+LLAMAEDGE_API_KEY=LlamaEdge
+```
+
+## How to Use
+
+### 1. Clone the Repository:
+```bash
+git clone https://github.com/JYC0413/llamatutor.git
+```
+
+### 2. Navigate to the Project Directory:
+```bash
+cd llamatutor
+```
+
+### 3. Create and Configure the .env File:
+```bash
+cp .example.env .env
+```
+
+Update the .env file with your desired values for the new variables:
+```plaintext
+LLAMAEDGE_BASE_URL=https://your-custom-url/v1
+LLAMAEDGE_MODEL_NAME=your-custom-model
+LLAMAEDGE_API_KEY=your-api-key
+```
+
+### 4. Install Dependencies:
+```bash
+npm install
+```
+or
+```bash
+yarn
+```
+
+### 5. Run the Application:
+```bash
+npm start
+```
+or
+```bash
+yarn start
+```
+
+By configuring these environment variables, you can point the application to your own LlamaEdge server and model, providing greater flexibility and customization.
