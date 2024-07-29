@@ -10,7 +10,6 @@ export interface ChatGPTMessage {
 export interface TogetherAIStreamPayload {
   model: string;
   messages: ChatGPTMessage[];
-
   stream: boolean;
 }
 
