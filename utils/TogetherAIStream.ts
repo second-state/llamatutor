@@ -1,8 +1,4 @@
-import {
-  createParser,
-  ParsedEvent,
-  ReconnectInterval,
-} from "eventsource-parser";
+import { createParser, ParsedEvent, ReconnectInterval } from "eventsource-parser";
 
 export type ChatGPTAgent = "user" | "system";
 
@@ -30,14 +26,14 @@ export async function TogetherAIStream(payload: TogetherAIStreamPayload) {
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
 
-  const res = await fetch("https://together.helicone.ai/v1/chat/completions", {
+  const res = await fetch(process.env.LLAMAEDGE_BASE_URL + "/chat/completions", {
     headers: {
       "Content-Type": "application/json",
-      "Helicone-Auth": `Bearer ${process.env.HELICONE_API_KEY}`,
-      Authorization: `Bearer ${process.env.TOGETHER_API_KEY ?? ""}`,
+      "Helicone-Auth": `Bearer ${process.env.LLAMAEDGE_API_KEY}`,
+      Authorization: `Bearer ${process.env.LLAMAEDGE_API_KEY ?? ""}`
     },
     method: "POST",
-    body: JSON.stringify(payload),
+    body: JSON.stringify(payload)
   });
 
   const readableStream = new ReadableStream({
@@ -55,10 +51,10 @@ export async function TogetherAIStream(payload: TogetherAIStreamPayload) {
         const data = {
           status: res.status,
           statusText: res.statusText,
-          body: await res.text(),
+          body: await res.text()
         };
         console.log(
-          `Error: recieved non-200 status code, ${JSON.stringify(data)}`,
+          `Error: recieved non-200 status code, ${JSON.stringify(data)}`
         );
         controller.close();
         return;
@@ -71,7 +67,7 @@ export async function TogetherAIStream(payload: TogetherAIStreamPayload) {
       for await (const chunk of res.body as any) {
         parser.feed(decoder.decode(chunk));
       }
-    },
+    }
   });
 
   let counter = 0;
@@ -94,14 +90,14 @@ export async function TogetherAIStream(payload: TogetherAIStreamPayload) {
         const payload = { text: text };
         // https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#event_stream_format
         controller.enqueue(
-          encoder.encode(`data: ${JSON.stringify(payload)}\n\n`),
+          encoder.encode(`data: ${JSON.stringify(payload)}\n\n`)
         );
         counter++;
       } catch (e) {
         // maybe parse error
         controller.error(e);
       }
-    },
+    }
   });
 
   return readableStream.pipeThrough(transformStream);

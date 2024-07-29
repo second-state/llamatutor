@@ -9,11 +9,11 @@ export async function POST(request: Request) {
   let { messages } = await request.json();
 
   try {
-    console.log("[getChat] Fetching answer stream from Together API");
+    console.log("[getChat] Fetching answer stream from LlamaEdge API");
     const payload: TogetherAIStreamPayload = {
-      model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      model: process.env.LLAMAEDGE_MODEL_NAME,
       messages,
-      stream: true,
+      stream: true
     };
     const stream = await TogetherAIStream(payload);
 
