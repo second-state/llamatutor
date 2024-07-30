@@ -1,0 +1,8 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/getSources/route": "app/api/getSources/route.js",
+  "/page": "app/page.js",
+  "/api/getChat/route": "app/api/getChat/route.js",
+  "/api/getParsedSources/route": "app/api/getParsedSources/route.js"
+}

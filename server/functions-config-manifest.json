@@ -1,0 +1,1 @@
+{"version":1,"functions":{"/api/getChat":{"maxDuration":60},"/api/getParsedSources":{"maxDuration":30}}}
