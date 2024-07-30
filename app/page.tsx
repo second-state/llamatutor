@@ -38,7 +38,7 @@ export default function Home() {
 
   const handleChat = async (messages?: { role: string; content: string }[]) => {
     setLoading(true);
-    const chatRes = await fetch("/api/getChat", {
+    const chatRes = await fetch("api/getChat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -98,7 +98,7 @@ export default function Home() {
 
   async function handleSourcesAndChat(question: string) {
     setIsLoadingSources(true);
-    let sourcesResponse = await fetch("/api/getSources", {
+    let sourcesResponse = await fetch("api/getSources", {
       method: "POST",
       body: JSON.stringify({ question }),
     });
@@ -112,7 +112,7 @@ export default function Home() {
     }
     setIsLoadingSources(false);
 
-    const parsedSourcesRes = await fetch("/api/getParsedSources", {
+    const parsedSourcesRes = await fetch("api/getParsedSources", {
       method: "POST",
       body: JSON.stringify({ sources }),
     });
