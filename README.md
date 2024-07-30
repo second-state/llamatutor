@@ -1,4 +1,4 @@
-# My Forked Project
+# LlamaTutor powered by LlamaEdge/Gaia
 
 This project is a fork of the [Original Project](https://github.com/Nutlope/llamatutor).
 
@@ -9,10 +9,11 @@ In this fork, I have introduced several enhancements to allow the customization 
 ### Environment Variables
 
 Three new environment variables have been added to the `.env` file:
-
-- `LLAMAEDGE_BASE_URL`: URL for the LlamaEdge server.
-- `LLAMAEDGE_MODEL_NAME`: Name of the LlamaEdge model to be used.
-- `LLAMAEDGE_API_KEY`: API key for accessing LlamaEdge services.
+- `SERPER_API_KEY`: The serach API key for searching content online. You can also use `BING_API_KEY` here.
+- `HELICONE_API_KEY`:
+- `LLAMAEDGE_BASE_URL`: URL for the LLM API base URL.
+- `LLAMAEDGE_MODEL_NAME`: Name of the model to be used.
+- `LLAMAEDGE_API_KEY`: API key for accessing the LLM services.
 
 These variables allow you to customize the URL and use your own server and model. The default values for these variables are:
 
@@ -24,17 +25,13 @@ LLAMAEDGE_API_KEY=LlamaEdge
 
 ## How to Use
 
-### 1. Clone the Repository:
+### 1. Clone the Repository and navigate to the Project Directory:
 ```bash
 git clone https://github.com/JYC0413/llamatutor.git
-```
-
-### 2. Navigate to the Project Directory:
-```bash
 cd llamatutor
 ```
 
-### 3. Create and Configure the .env File:
+### 2. Create and Configure the .env File:
 ```bash
 cp .example.env .env
 ```
@@ -45,6 +42,8 @@ LLAMAEDGE_BASE_URL=https://your-custom-url/v1
 LLAMAEDGE_MODEL_NAME=your-custom-model
 LLAMAEDGE_API_KEY=your-api-key
 ```
+
+Apply for Serpre API key here and Helicone API key here.
 
 ### 4. Install Dependencies:
 ```bash
@@ -57,11 +56,11 @@ yarn
 
 ### 5. Run the Application:
 ```bash
-npm start
+npm run dev
 ```
 or
 ```bash
 yarn start
 ```
 
-By configuring these environment variables, you can point the application to your own LlamaEdge server and model, providing greater flexibility and customization.
+By configuring these environment variables, you can point the application to your own LLM server and model, providing greater flexibility and customization.
