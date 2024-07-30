@@ -10,7 +10,7 @@ In this fork, I have introduced several enhancements to allow the customization 
 
 Three new environment variables have been added to the `.env` file:
 - `SERPER_API_KEY`: The serach API key for searching content online. You can also use `BING_API_KEY` here.
-- `HELICONE_API_KEY`:
+- `HELICONE_API_KEY`: The Helicone API key for observability.
 - `LLAMAEDGE_BASE_URL`: URL for the LLM API base URL.
 - `LLAMAEDGE_MODEL_NAME`: Name of the model to be used.
 - `LLAMAEDGE_API_KEY`: API key for accessing the LLM services.
@@ -43,7 +43,7 @@ LLAMAEDGE_MODEL_NAME=your-custom-model
 LLAMAEDGE_API_KEY=your-api-key
 ```
 
-Apply for Serpre API key here and Helicone API key here.
+Apply for Serpre API key [here](https://serper.dev/) and Helicone API key [here](https://www.helicone.ai/).
 
 ### 4. Install Dependencies:
 ```bash
