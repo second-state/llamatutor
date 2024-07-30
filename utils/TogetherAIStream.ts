@@ -8,7 +8,7 @@ export interface ChatGPTMessage {
 }
 
 export interface TogetherAIStreamPayload {
-  model: string;
+  model: string | undefined;
   messages: ChatGPTMessage[];
   stream: boolean;
 }

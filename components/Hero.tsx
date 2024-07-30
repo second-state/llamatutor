@@ -42,7 +42,7 @@ const Hero: FC<THeroProps> = ({
             height={20}
           />
           <span className="text-center text-sm font-medium italic">
-            Powered by <b>Llama 3.1</b> and <b>Together AI</b>
+            Powered by <a target="_blank" href="https://llamaedge.com/"><b>LlamaEdge</b></a> and <a target="_blank" href="https://www.gaianet.ai/"><b>Gaia</b></a>
           </span>
         </a>
         <h2 className="mt-2 bg-custom-gradient bg-clip-text text-center text-4xl font-medium tracking-tight text-gray-900 sm:text-6xl">
