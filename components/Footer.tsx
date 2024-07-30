@@ -7,7 +7,7 @@ const Footer = () => {
       <a href="/" className="flex items-center gap-2.5">
         <Image
           unoptimized
-          src="/new-logo.svg"
+          src="new-logo.svg"
           alt="footer"
           width={160}
           height={30}
@@ -17,7 +17,7 @@ const Footer = () => {
         <Link href={"https://x.com/nutlope"} target="_blank">
           <Image
             unoptimized
-            src="/twitter.svg"
+            src="twitter.svg"
             alt="twitter"
             width={15}
             height={15}
@@ -26,7 +26,7 @@ const Footer = () => {
         <Link href={"https://github.com/Nutlope/llamatutor"} target="_blank">
           <Image
             unoptimized
-            src={"/github.svg"}
+            src={"github.svg"}
             alt="facebook"
             width={16}
             height={16}

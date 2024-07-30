@@ -31,18 +31,18 @@ const Hero: FC<THeroProps> = ({
       <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center justify-center sm:mt-36">
         <a
           className="mb-4 inline-flex h-7 shrink-0 items-center gap-[9px] rounded-[50px] border-[0.5px] border-solid border-[#E6E6E6] bg-[rgba(234,238,255,0.65)] bg-white px-5 py-4 shadow-[0px_1px_1px_0px_rgba(0,0,0,0.25)]"
-          href="https://www.together.ai/"
+          href="https://www.gaianet.ai/"
           target="_blank"
         >
           <Image
             unoptimized
-            src="/togethercomputer.png"
+            src="togethercomputer.png"
             alt="hero"
             width={20}
             height={20}
           />
           <span className="text-center text-sm font-medium italic">
-            Powered by <a target="_blank" href="https://www.gaianet.ai/"><b>GaiaNet</b></a>
+            Powered by <b>GaiaNet</b>
           </span>
         </a>
         <h2 className="mt-2 bg-custom-gradient bg-clip-text text-center text-4xl font-medium tracking-tight text-gray-900 sm:text-6xl">

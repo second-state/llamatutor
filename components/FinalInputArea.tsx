@@ -72,7 +72,7 @@ const FinalInputArea: FC<TInputAreaProps> = ({
 
         <Image
           unoptimized
-          src={"/up-arrow.svg"}
+          src={"up-arrow.svg"}
           alt="search"
           width={24}
           height={24}
