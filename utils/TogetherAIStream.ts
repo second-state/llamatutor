@@ -28,7 +28,6 @@ export async function TogetherAIStream(payload: TogetherAIStreamPayload) {
   const res = await fetch(process.env.LLAMAEDGE_BASE_URL + "/chat/completions", {
     headers: {
       "Content-Type": "application/json",
-      "Helicone-Auth": `Bearer ${process.env.LLAMAEDGE_API_KEY}`,
       Authorization: `Bearer ${process.env.LLAMAEDGE_API_KEY ?? ""}`
     },
     method: "POST",

@@ -27,7 +27,7 @@ LLAMAEDGE_API_KEY=LlamaEdge
 
 ### 1. Clone the Repository and navigate to the Project Directory:
 ```bash
-git clone https://github.com/JYC0413/llamatutor.git
+git clone https://github.com/second-state/llamatutor.git
 cd llamatutor
 ```
 
